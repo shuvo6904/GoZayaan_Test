@@ -65,9 +65,16 @@ dependencies {
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
 
+    // Glide for image load
+    implementation(libs.glide)
+    ksp(libs.ksp)
+
     // SSP - a scalable size unit for texts
     implementation (libs.ssp.android)
 
     // SDP - a scalable size unit
     implementation (libs.sdp.android)
+
+    //Timber
+    implementation(libs.timber)
 }

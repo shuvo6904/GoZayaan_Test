@@ -42,7 +42,7 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(converterFactory: GsonConverterFactory, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://2e7c20f0c5b547a990453c4503464744.api.mockbin.io")
+            .baseUrl("https://d9c8de84d7e4424dbbb59e258f353159.api.mockbin.io")
             .addConverterFactory(converterFactory)
             .client(okHttpClient)
             .build()

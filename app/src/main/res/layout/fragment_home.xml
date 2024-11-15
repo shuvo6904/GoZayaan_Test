@@ -64,7 +64,6 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_top"
         android:fillViewport="true"
         android:scrollbars="none"
         android:overScrollMode="never"
@@ -81,6 +80,7 @@
                 android:layout_height="@dimen/_54sdp"
                 android:layout_marginHorizontal="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_top"
+                app:layout_constraintTop_toTopOf="parent"
                 android:background="@drawable/bg_search_layout">
 
                 <TextView

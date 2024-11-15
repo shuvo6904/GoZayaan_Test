@@ -1,4 +1,4 @@
-package com.shuvo6904.gozayaan.data.data_source.model
+package com.shuvo6904.gozayaan.data.model
 
 import com.google.gson.annotations.SerializedName
 
@@ -19,8 +19,8 @@ data class RecommendedItem(
     val isAvailable: Boolean? = null,
     @SerializedName("hero_image")
     val heroImage: String? = null,
-    @SerializedName("detail_image")
-    val detailImage: String? = null,
+    @SerializedName("detail_images")
+    val detailImages: List<String?>? = null,
     @SerializedName("currency")
     val currency: String? = null
 )
