@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -63,4 +64,10 @@ dependencies {
     // Retrofit for network requests
     implementation (libs.retrofit)
     implementation (libs.converter.gson)
+
+    // SSP - a scalable size unit for texts
+    implementation (libs.ssp.android)
+
+    // SDP - a scalable size unit
+    implementation (libs.sdp.android)
 }
