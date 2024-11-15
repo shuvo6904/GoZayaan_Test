@@ -1,5 +1,6 @@
 package com.shuvo6904.gozayaan.di
 
+import com.shuvo6904.gozayaan.data.data_source.local.PopularCategoriesDataSource
 import com.shuvo6904.gozayaan.data.data_source.remote.ApiService
 import com.shuvo6904.gozayaan.data.repository.home.HomeRepositoryImpl
 import com.shuvo6904.gozayaan.domain.repository.home.HomeRepository
@@ -14,7 +15,7 @@ import javax.inject.Singleton
 object RepositoryModule {
     @Provides
     @Singleton
-    fun provideHomeRepository(apiService: ApiService): HomeRepository {
-        return HomeRepositoryImpl(apiService)
+    fun provideHomeRepository(apiService: ApiService, popularCategoriesDataSources: PopularCategoriesDataSource): HomeRepository {
+        return HomeRepositoryImpl(apiService, popularCategoriesDataSources)
     }
 }

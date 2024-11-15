@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.shuvo6904.gozayaan.data.UiState
+import com.shuvo6904.gozayaan.data.model.PopularCategory
 import com.shuvo6904.gozayaan.databinding.FragmentHomeBinding
 import com.shuvo6904.gozayaan.presentation.home.HomeViewModel
+import com.shuvo6904.gozayaan.presentation.home.adapter.PopularCategoriesAdapter
 import com.shuvo6904.gozayaan.presentation.home.adapter.RecommendedAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -20,6 +22,11 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private val recommendedAdapter by lazy {
         RecommendedAdapter{ item ->
+
+        }
+    }
+    private val popularCategoriesAdapter by lazy {
+        PopularCategoriesAdapter{ item ->
 
         }
     }
@@ -42,6 +49,7 @@ class HomeFragment : Fragment() {
     private fun initViews() {
         binding.apply {
             recommendedRV.adapter = recommendedAdapter
+            popularCategoriesRV.adapter = popularCategoriesAdapter
         }
     }
 
@@ -61,9 +69,26 @@ class HomeFragment : Fragment() {
                 }
             }
         }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.uiStatePopularCategories.collect {
+                when(it) {
+                    is UiState.Loading -> {
+
+                    }
+                    is UiState.Success -> {
+                        popularCategoriesAdapter.submitList(it.data)
+                    }
+                    is UiState.Error -> {
+
+                    }
+                }
+            }
+        }
     }
 
     private fun fetchData() {
         viewModel.getRecommendedLocation()
+        viewModel.getPopularCategories()
     }
 }
