@@ -1,0 +1,21 @@
+<!-- res/drawable/circular_background_with_shadow.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#66000000" /> <!-- 40% opacity black -->
+            <padding
+                android:left="10dp"
+                android:top="24dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+        </shape>
+    </item>
+
+    <!-- Transparent Center (for visible transparent areas) -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>

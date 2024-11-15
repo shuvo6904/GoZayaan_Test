@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.shuvo6904.gozayaan.HomeFragment"
+        android:name="com.shuvo6904.gozayaan.presentation.home.screen.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

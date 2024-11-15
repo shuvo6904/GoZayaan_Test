@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="px_12_text_size">@dimen/_10ssp</dimen>
+    <dimen name="px_13_text_size">@dimen/_11ssp</dimen>
     <dimen name="px_14_text_size">@dimen/_12ssp</dimen>
     <dimen name="px_16_text_size">@dimen/_14ssp</dimen>
     <dimen name="px_18_text_size">@dimen/_16ssp</dimen>
@@ -14,4 +15,7 @@
     <dimen name="px_42">@dimen/_35sdp</dimen>
     <dimen name="recommended_radius_px_20">@dimen/_16sdp</dimen>
     <dimen name="corner_radius_px_30">@dimen/_25sdp</dimen>
+    <dimen name="corner_radius_px_15">@dimen/_12sdp</dimen>
+    <dimen name="popular_categories_width_px_70">@dimen/_60sdp</dimen>
+    <dimen name="popular_categories_height_px_80">@dimen/_70sdp</dimen>
 </resources>

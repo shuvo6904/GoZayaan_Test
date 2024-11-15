@@ -1,10 +1,8 @@
-package com.shuvo6904.gozayaan
+package com.shuvo6904.gozayaan.presentation.home
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.shuvo6904.gozayaan.R
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
