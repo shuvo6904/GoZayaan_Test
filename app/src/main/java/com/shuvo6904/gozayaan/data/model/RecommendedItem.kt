@@ -1,7 +1,10 @@
 package com.shuvo6904.gozayaan.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class RecommendedItem(
     @SerializedName("property_name")
     val propertyName: String? = null,
@@ -23,4 +26,4 @@ data class RecommendedItem(
     val detailImages: List<String?>? = null,
     @SerializedName("currency")
     val currency: String? = null
-)
+): Parcelable

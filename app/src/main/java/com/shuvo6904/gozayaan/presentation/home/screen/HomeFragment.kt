@@ -10,9 +10,12 @@ import androidx.lifecycle.lifecycleScope
 import com.shuvo6904.gozayaan.data.UiState
 import com.shuvo6904.gozayaan.data.model.PopularCategory
 import com.shuvo6904.gozayaan.databinding.FragmentHomeBinding
+import com.shuvo6904.gozayaan.presentation.details.DetailsActivity
 import com.shuvo6904.gozayaan.presentation.home.HomeViewModel
 import com.shuvo6904.gozayaan.presentation.home.adapter.PopularCategoriesAdapter
 import com.shuvo6904.gozayaan.presentation.home.adapter.RecommendedAdapter
+import com.shuvo6904.gozayaan.utils.Constants
+import com.shuvo6904.gozayaan.utils.Extensions.openActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -22,7 +25,11 @@ class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
     private val recommendedAdapter by lazy {
         RecommendedAdapter{ item ->
-
+            context?.let { context ->
+                context.openActivity<DetailsActivity> {
+                    putExtra(Constants.RECOMMENDED_ITEM, item)
+                }
+            }
         }
     }
     private val popularCategoriesAdapter by lazy {
