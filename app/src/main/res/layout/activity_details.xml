@@ -7,5 +7,196 @@
     android:layout_height="match_parent"
     android:background="@color/charcoal_black"
     tools:context=".presentation.details.DetailsActivity">
+    <!-- Content inside a NestedScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scrollableContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                android:id="@+id/imageCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px_400"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showBottomShadow="false"
+                app:showCaption="false"
+                app:showIndicator="false"
+                app:showNavigationButtons="false"
+                app:showTopShadow="false" />
+
+            <me.relex.circleindicator.CircleIndicator2
+                android:id="@+id/customIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/bg_image_carousel_indicator"
+                android:paddingHorizontal="@dimen/_5sdp"
+                app:ci_animator="@animator/scale_with_alpha"
+                app:ci_drawable="@drawable/dot"
+                app:ci_drawable_unselected="@drawable/dot"
+                app:ci_height="4dp"
+                app:ci_width="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageCarousel"
+                app:layout_constraintEnd_toEndOf="@+id/imageCarousel"
+                app:layout_constraintStart_toStartOf="@+id/imageCarousel" />
+
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_horizontal"
+                android:background="@drawable/bg_back_btn"
+                android:contentDescription="@string/back_button_icon"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/propertyName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/rubik_bold"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_24_text_size"
+                app:layout_constraintEnd_toStartOf="@+id/rating"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageCarousel"
+                tools:text="Mountain Safari" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_horizontal"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/rubik_regular"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_14_text_size"
+                app:drawableStartCompat="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@id/propertyName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/propertyName"
+                tools:text="4.9" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/rubik_regular"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_14_text_size"
+                app:drawableStartCompat="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@+id/propertyName"
+                tools:text="Kolkata, India" />
+
+            <TextView
+                android:id="@+id/aboutTheTrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/margin_top"
+                android:drawablePadding="@dimen/_5sdp"
+                android:fontFamily="@font/rubik_medium"
+                android:text="@string/about_the_trip"
+                android:textColor="@color/white_90"
+                android:textSize="@dimen/px_18_text_size"
+                app:drawableEndCompat="@drawable/ic_smile_emoji"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/location" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="@font/rubik_regular"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px_14_text_size"
+                app:layout_constraintTop_toBottomOf="@+id/aboutTheTrip"
+                tools:text="A luxurious experience in the heart of Kolkata with top-notch facilities." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/stroke_white"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/margin_horizontal"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+            <TextView
+                android:id="@+id/fareWithCurrency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_bold"
+                android:textColor="@color/white_90"
+                android:textSize="@dimen/px_13_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/bookNowButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bookNowButton"
+                tools:text="$ 5,307" />
+
+            <TextView
+                android:id="@+id/fateUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:alpha="0.3"
+                android:fontFamily="@font/rubik_medium"
+                android:textColor="@color/white_90"
+                android:textSize="@dimen/px_10_text_size"
+                app:layout_constraintBottom_toBottomOf="@id/fareWithCurrency"
+                app:layout_constraintStart_toEndOf="@+id/fareWithCurrency"
+                app:layout_constraintTop_toTopOf="@+id/fareWithCurrency"
+                tools:text="/PER DAY" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bookNowButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_book_now_btn"
+                android:fontFamily="@font/rubik_medium"
+                android:text="@string/book_now"
+                android:textColor="#1D2026"
+                android:textSize="@dimen/px_16_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

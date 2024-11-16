@@ -23,7 +23,7 @@ data class RecommendedItem(
     @SerializedName("hero_image")
     val heroImage: String? = null,
     @SerializedName("detail_images")
-    val detailImages: List<String?>? = null,
+    val detailsImages: List<String?>? = null,
     @SerializedName("currency")
     val currency: String? = null
 ): Parcelable

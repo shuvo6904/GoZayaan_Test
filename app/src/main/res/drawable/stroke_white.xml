@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <stroke
+        android:width="1px"
+        android:color="#1AFFFFFF" /> <!-- 10% opacity white stroke -->
+    <solid android:color="#00000000" /> <!-- Transparent fill -->
+</shape>

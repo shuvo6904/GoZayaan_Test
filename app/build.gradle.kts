@@ -78,4 +78,8 @@ dependencies {
 
     //Timber
     implementation(libs.timber)
+
+    // Image Carousel & Circle Indicator
+    implementation (libs.whynotimagecarousel)
+    implementation (libs.circleindicator)
 }

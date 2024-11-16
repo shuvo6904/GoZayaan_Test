@@ -37,7 +37,7 @@ class RecommendedAdapter(
         fun bind(item: RecommendedItem, onItemClicked: (RecommendedItem) -> Unit) {
             binding.apply {
                 recommendedImage.loadImage(item.heroImage)
-                locationName.text = item.propertyName
+                propertyName.text = item.propertyName
                 location.text = item.location
 
                 root.setOnClickListener {

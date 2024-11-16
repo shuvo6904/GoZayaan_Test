@@ -15,4 +15,9 @@
     <string name="recommendation_image">Recommended Image</string>
     <string name="bookmark_image">Bookmark Image</string>
     <string name="popular_categories">Popular Categories</string>
+    <string name="about_the_trip">About the trip</string>
+    <string name="book_now">Book Now</string>
+    <string name="fare_with_currency_sign">%1$s %2$s</string>
+    <string name="per_day">/%1$s</string>
+    <string name="back_button_icon">Back Button Icon</string>
 </resources>

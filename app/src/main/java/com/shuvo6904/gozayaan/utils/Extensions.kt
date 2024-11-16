@@ -29,4 +29,13 @@ object Extensions {
         intent.extras()
         startActivity(intent)
     }
+
+    fun String.toCurrencySign(): String {
+        val currency = Currency.fromString(this)
+        return currency?.symbol ?: this // Return currency symbol or original string if not found
+    }
+
+    fun String.toCapitalized(): String {
+        return this.uppercase()
+    }
 }
