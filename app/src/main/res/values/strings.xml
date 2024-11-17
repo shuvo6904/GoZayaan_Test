@@ -20,4 +20,5 @@
     <string name="fare_with_currency_sign">%1$s %2$s</string>
     <string name="per_day">/%1$s</string>
     <string name="back_button_icon">Back Button Icon</string>
+    <string name="location_image">Location Image</string>
 </resources>

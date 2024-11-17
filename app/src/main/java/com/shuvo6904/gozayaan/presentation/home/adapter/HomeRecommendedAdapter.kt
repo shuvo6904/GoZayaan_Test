@@ -9,9 +9,9 @@ import com.shuvo6904.gozayaan.data.model.RecommendedItem
 import com.shuvo6904.gozayaan.databinding.ItemRecommendedHomeBinding
 import com.shuvo6904.gozayaan.utils.Extensions.loadImage
 
-class RecommendedAdapter(
+class HomeRecommendedAdapter(
     private val onItemClicked: (RecommendedItem) -> Unit
-) : ListAdapter<RecommendedItem, RecommendedAdapter.RecommendedViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<RecommendedItem, HomeRecommendedAdapter.RecommendedViewHolder>(DIFF_CALLBACK) {
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RecommendedItem>() {
             override fun areItemsTheSame(

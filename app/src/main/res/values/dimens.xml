@@ -4,17 +4,22 @@
     <dimen name="px_12_text_size">@dimen/_10ssp</dimen>
     <dimen name="px_13_text_size">@dimen/_11ssp</dimen>
     <dimen name="px_14_text_size">@dimen/_12ssp</dimen>
-    <dimen name="px_16_text_size">@dimen/_14ssp</dimen>
-    <dimen name="px_18_text_size">@dimen/_16ssp</dimen>
-    <dimen name="px_24_text_size">@dimen/_20ssp</dimen>
+    <dimen name="px_16_text_size">@dimen/_13ssp</dimen>
+    <dimen name="px_18_text_size">@dimen/_15ssp</dimen>
+    <dimen name="px_24_text_size">@dimen/_18ssp</dimen>
 
     <dimen name="margin_top">@dimen/_20sdp</dimen>
     <dimen name="margin_horizontal">@dimen/_20sdp</dimen>
     <dimen name="px_14">@dimen/_12sdp</dimen>
     <dimen name="px_18">@dimen/_16sdp</dimen>
     <dimen name="px_210">@dimen/_180sdp</dimen>
-    <dimen name="px_230">@dimen/_200sdp</dimen>
+    <dimen name="px_230">@dimen/_210sdp</dimen>
+    <dimen name="px_180">@dimen/_160sdp</dimen>
     <dimen name="px_42">@dimen/_35sdp</dimen>
+    <dimen name="px_32">@dimen/_28sdp</dimen>
+    <dimen name="px_24">@dimen/_18sdp</dimen>
+    <dimen name="px_17">@dimen/_12sdp</dimen>
+    <dimen name="px_54">@dimen/_45sdp</dimen>
     <dimen name="px_400">@dimen/_300sdp</dimen>
     <dimen name="recommended_radius_px_20">@dimen/_16sdp</dimen>
     <dimen name="corner_radius_px_30">@dimen/_25sdp</dimen>

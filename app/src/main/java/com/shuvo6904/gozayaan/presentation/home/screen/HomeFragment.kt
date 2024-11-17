@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.shuvo6904.gozayaan.data.UiState
-import com.shuvo6904.gozayaan.data.model.PopularCategory
 import com.shuvo6904.gozayaan.databinding.FragmentHomeBinding
 import com.shuvo6904.gozayaan.presentation.details.DetailsActivity
 import com.shuvo6904.gozayaan.presentation.home.HomeViewModel
+import com.shuvo6904.gozayaan.presentation.home.adapter.HomeRecommendedAdapter
 import com.shuvo6904.gozayaan.presentation.home.adapter.PopularCategoriesAdapter
-import com.shuvo6904.gozayaan.presentation.home.adapter.RecommendedAdapter
+import com.shuvo6904.gozayaan.presentation.recommended.adapter.RecommendedAdapter
+import com.shuvo6904.gozayaan.presentation.recommended.RecommendedActivity
 import com.shuvo6904.gozayaan.utils.Constants
 import com.shuvo6904.gozayaan.utils.Extensions.openActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +25,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
     private val recommendedAdapter by lazy {
-        RecommendedAdapter{ item ->
+        HomeRecommendedAdapter{ item ->
             context?.let { context ->
                 context.openActivity<DetailsActivity> {
                     putExtra(Constants.RECOMMENDED_ITEM, item)
@@ -34,7 +35,7 @@ class HomeFragment : Fragment() {
     }
     private val popularCategoriesAdapter by lazy {
         PopularCategoriesAdapter{ item ->
-
+            // Handle Popular Category item click
         }
     }
     override fun onCreateView(
@@ -51,6 +52,7 @@ class HomeFragment : Fragment() {
         initViews()
         initObservers()
         fetchData()
+        initListeners()
     }
 
     private fun initViews() {
@@ -97,5 +99,11 @@ class HomeFragment : Fragment() {
     private fun fetchData() {
         viewModel.getRecommendedLocation()
         viewModel.getPopularCategories()
+    }
+
+    private fun initListeners() {
+        binding.seeAll.setOnClickListener {
+            context?.openActivity<RecommendedActivity> {  }
+        }
     }
 }

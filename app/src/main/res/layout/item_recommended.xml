@@ -2,16 +2,15 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/_12sdp"
     app:cardCornerRadius="@dimen/recommended_radius_px_20"
     app:cardElevation="0dp"
     app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/px_210"
-        android:layout_height="@dimen/px_230">
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_180">
 
         <ImageView
             android:id="@+id/recommendedImage"
@@ -29,9 +28,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -44,7 +42,7 @@
                 android:fontFamily="@font/rubik_bold"
                 android:maxLines="1"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/px_16_text_size"
+                android:textSize="@dimen/px_14_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -55,9 +53,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="@dimen/_5sdp"
+                android:textSize="@dimen/px_14_text_size"
                 android:fontFamily="@font/rubik_regular"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/px_14_text_size"
                 app:drawableStartCompat="@drawable/ic_map_pin"
                 app:layout_constraintTop_toBottomOf="@+id/propertyName"
                 tools:text="India" />
@@ -67,7 +65,7 @@
             android:id="@+id/bookmark"
             android:layout_width="@dimen/px_42"
             android:layout_height="@dimen/px_42"
-            android:layout_margin="@dimen/_15sdp"
+            android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/bg_bookmark"
             android:contentDescription="@string/bookmark_image"
             android:padding="@dimen/_10sdp"

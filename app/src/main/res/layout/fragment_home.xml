@@ -19,45 +19,59 @@
 
         <ImageView
             android:id="@+id/categoryIcon"
-            android:layout_width="@dimen/_24sdp"
-            android:layout_height="@dimen/_24sdp"
+            android:layout_width="@dimen/px_24"
+            android:layout_height="@dimen/px_24"
             android:contentDescription="@string/category_icon"
             android:src="@drawable/ic_category"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:drawablePadding="@dimen/_5sdp"
-            android:fontFamily="@font/rubik_regular"
-            android:text="@string/new_work_ny"
-            android:textColor="@color/white_90"
-            android:textSize="@dimen/px_12_text_size"
-            app:drawableStartCompat="@drawable/ic_location"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/profileAvatarLayout"
+            app:layout_constraintEnd_toStartOf="@+id/profileImage"
             app:layout_constraintStart_toEndOf="@+id/categoryIcon"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UseCompoundDrawables">
 
-        <FrameLayout
-            android:id="@+id/profileAvatarLayout"
-            android:layout_width="@dimen/_32sdp"
-            android:layout_height="@dimen/_32sdp"
+            <!-- ImageView for the location icon -->
+            <ImageView
+                android:id="@+id/locationImage"
+                android:layout_width="@dimen/px_17"
+                android:layout_height="@dimen/px_17"
+                android:contentDescription="@string/location_image"
+                android:src="@drawable/ic_location" />
+
+            <!-- TextView for the location label -->
+            <TextView
+                android:id="@+id/currentLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:alpha="0.5"
+                android:fontFamily="@font/rubik_regular"
+                android:text="@string/new_work_ny"
+                android:textColor="@color/white_90"
+                android:textSize="@dimen/px_12_text_size" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="@dimen/px_32"
+            android:layout_height="@dimen/px_32"
             android:background="@drawable/bg_rectangle_profile"
+            android:contentDescription="@string/profile_avatar"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_avatar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="@dimen/_17sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_gravity="center"
-                android:contentDescription="@string/profile_avatar"
-                android:src="@drawable/ic_avatar" />
-        </FrameLayout>
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Scrollable content -->
@@ -65,8 +79,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
-        android:scrollbars="none"
         android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/topLayout">
 
@@ -77,18 +91,21 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/searchLayout"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_54sdp"
+                android:layout_height="@dimen/px_54"
                 android:layout_marginHorizontal="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_top"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="@drawable/bg_search_layout">
+                android:background="@drawable/bg_search_layout"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
+                    android:alpha="0.3"
                     android:drawablePadding="@dimen/_10sdp"
+                    android:ellipsize="end"
                     android:fontFamily="@font/rubik_regular"
+                    android:maxLines="1"
                     android:text="@string/search"
                     android:textColor="@color/white_90"
                     android:textSize="@dimen/px_14_text_size"
@@ -146,8 +163,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:id="@+id/seeAll"
                     android:layout_width="wrap_content"
-                    android:layout_height="@dimen/px_18"
+                    android:layout_height="0dp"
+                    android:padding="@dimen/_5sdp"
                     android:contentDescription="@string/see_all"
                     android:src="@drawable/text_see_all"
                     app:layout_constraintBottom_toBottomOf="parent"

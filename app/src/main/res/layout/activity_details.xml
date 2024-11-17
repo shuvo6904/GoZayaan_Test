@@ -189,6 +189,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_book_now_btn"
                 android:fontFamily="@font/rubik_medium"
+                android:textAllCaps="false"
+                android:includeFontPadding="false"
                 android:text="@string/book_now"
                 android:textColor="#1D2026"
                 android:textSize="@dimen/px_16_text_size"

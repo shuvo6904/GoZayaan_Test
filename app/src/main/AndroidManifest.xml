@@ -16,6 +16,9 @@
         android:theme="@style/Theme.GoZayaanTest"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.recommended.RecommendedActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.details.DetailsActivity"
             android:exported="false" />
         <activity
