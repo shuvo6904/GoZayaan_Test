@@ -69,7 +69,7 @@ class DetailsActivity : AppCompatActivity() {
                 ) {
                     val currentBinding = binding as ItemImageCarouselBinding
                     currentBinding.image.apply {
-                        setImage(item)
+                        setImage(item, R.drawable.ic_image_placeholder)
                         scaleType = ImageView.ScaleType.FIT_XY
                     }
                 }
@@ -81,7 +81,7 @@ class DetailsActivity : AppCompatActivity() {
             detailsImages?.forEach {
                 carouselList.add(CarouselItem(it))
             }
-            binding.imageCarousel.setData(carouselList)
+            setData(carouselList)
         }
     }
 

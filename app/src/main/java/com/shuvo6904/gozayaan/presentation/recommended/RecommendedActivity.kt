@@ -1,20 +1,15 @@
 package com.shuvo6904.gozayaan.presentation.recommended
 
-import GridSpacingItemDecoration
+import com.shuvo6904.gozayaan.utils.GridSpacingItemDecoration
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.shuvo6904.gozayaan.R
 import com.shuvo6904.gozayaan.data.UiState
 import com.shuvo6904.gozayaan.databinding.ActivityRecommendedBinding
 import com.shuvo6904.gozayaan.presentation.details.DetailsActivity
-import com.shuvo6904.gozayaan.presentation.home.HomeViewModel
 import com.shuvo6904.gozayaan.presentation.recommended.adapter.RecommendedAdapter
 import com.shuvo6904.gozayaan.utils.Constants
 import com.shuvo6904.gozayaan.utils.Extensions.openActivity
