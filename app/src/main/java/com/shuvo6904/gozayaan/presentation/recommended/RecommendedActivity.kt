@@ -2,6 +2,7 @@ package com.shuvo6904.gozayaan.presentation.recommended
 
 import GridSpacingItemDecoration
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -44,8 +45,9 @@ class RecommendedActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
+        val itemSpacing = resources.getDimensionPixelSize(R.dimen.item_spacing)
         binding.recommendedRV.apply {
-            addItemDecoration(GridSpacingItemDecoration(2, 30, false))
+            addItemDecoration(GridSpacingItemDecoration(2, itemSpacing, false))
             adapter = recommendedAdapter
         }
     }
@@ -55,13 +57,15 @@ class RecommendedActivity : AppCompatActivity() {
             viewModel.uiStateRecommendedLocation.collect {
                 when(it) {
                     is UiState.Loading -> {
-
+                        binding.progressBar.show()
                     }
                     is UiState.Success -> {
+                        binding.progressBar.hide()
                         recommendedAdapter.submitList(it.data)
                     }
                     is UiState.Error -> {
-
+                        binding.progressBar.hide()
+                        Toast.makeText(this@RecommendedActivity, it.errorMessage, Toast.LENGTH_LONG).show()
                     }
                 }
             }

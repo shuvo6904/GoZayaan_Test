@@ -76,9 +76,12 @@
 
     <!-- Scrollable content -->
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:visibility="gone"
+        tools:visibility="visible"
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,7 +137,7 @@
                 android:id="@+id/popularCategoriesRV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_horizontal"
+                tools:layout_marginStart="@dimen/first_item_spacing"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:orientation="horizontal"
                 android:overScrollMode="never"
@@ -147,18 +150,19 @@
                 android:id="@+id/recommendedLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/margin_horizontal"
                 android:layout_marginTop="@dimen/margin_top"
                 app:layout_constraintTop_toBottomOf="@id/popularCategoriesRV">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/recommended"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_horizontal"
                     android:fontFamily="@font/rubik_medium"
                     android:text="@string/recommended"
                     android:textColor="@color/white_90"
                     android:textSize="@dimen/px_18_text_size"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/seeAll"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -166,26 +170,39 @@
                     android:id="@+id/seeAll"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
-                    android:padding="@dimen/_5sdp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:layout_marginEnd="@dimen/margin_horizontal"
                     android:contentDescription="@string/see_all"
+                    android:paddingVertical="@dimen/_5sdp"
                     android:src="@drawable/text_see_all"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/recommended"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintTop_toTopOf="@id/recommended" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recommendedRV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_horizontal"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:orientation="horizontal"
-                android:overScrollMode="never"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintTop_toBottomOf="@id/recommendedLayout"
-                tools:itemCount="10"
-                tools:listitem="@layout/item_recommended_home" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recommendedRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/recommended"
+                    tools:itemCount="10"
+                    tools:layout_marginStart="@dimen/first_item_spacing"
+                    tools:listitem="@layout/item_recommended_home" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

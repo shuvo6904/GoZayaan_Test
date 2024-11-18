@@ -82,4 +82,7 @@ dependencies {
     // Image Carousel & Circle Indicator
     implementation (libs.whynotimagecarousel)
     implementation (libs.circleindicator)
+
+    // Splash Screen
+    implementation (libs.androidx.core.splashscreen)
 }

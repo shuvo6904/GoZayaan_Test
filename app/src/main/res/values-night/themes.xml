@@ -15,4 +15,12 @@
         <!-- navigation bar color. -->
         <item name="android:navigationBarColor">@color/navigation_bar_color</item>
     </style>
+
+    <style name="Theme.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/charcoal_black</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.GoZayaanTest</item>
+        <!-- Required for animated icons -->
+        <!--<item name="windowSplashScreenAnimationDuration">2000</item>-->
+    </style>
 </resources>

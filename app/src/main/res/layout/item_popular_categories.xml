@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="@dimen/popular_categories_width_px_70"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/_10sdp"
+    tools:layout_marginEnd="@dimen/item_spacing"
     android:foreground="?attr/selectableItemBackground"
     android:background="@drawable/bg_top_categories_item"
     android:minHeight="@dimen/popular_categories_height_px_80"
